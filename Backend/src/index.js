@@ -9,7 +9,7 @@ const cors = require("cors");
 const db = require("./models");
 global.appRoot = path.resolve(__dirname);
 
-const PORT = config.app.port;
+const PORT = 5000;
 const app = appManager.setup(config);
 /*cors handling*/
 app.use(
