@@ -70,7 +70,7 @@ module.exports = {
   },
 
   async getAllOrderList(req, res, next) {
-    let limit = 10;
+    let limit = 5000;
     let sort = ["createdAt", "DESC"];
     let offset = 0;
     let page = 1;
