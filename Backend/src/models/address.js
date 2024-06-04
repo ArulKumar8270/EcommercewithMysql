@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
   Address.associate = function(models) {
     // associations can be defined here
     models.addresses.belongsTo(models.orders, { foreignKey: 'orderId' });  
-    models.addresses.hasMany(models.Cart, { foreignKey: 'addressId' });  
+    models.addresses.hasMany(models.carts, { foreignKey: 'addressId' });  
     models.addresses.belongsTo(models.customer, { foreignKey: 'custId' });      
   };
   return Address;

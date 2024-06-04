@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
   Order.associate = function(models) {
     // associations can be defined here
     models.orders.hasMany(models.addresses, { foreignKey: 'orderId' });
-    models.orders.hasMany(models.Cart, { foreignKey: 'orderId' });
+    models.orders.hasMany(models.carts, { foreignKey: 'orderId' });
 
     // models.orders.hasMany(models.payment, { foreignKey: 'orderCreationId' });  
 

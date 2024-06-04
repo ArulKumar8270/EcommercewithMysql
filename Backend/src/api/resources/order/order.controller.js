@@ -54,7 +54,7 @@ module.exports = {
                 photo: product[i].photo,
               });
             }
-            return db.Cart.bulkCreate(cartEntries).then((r) => [r]);
+            return db.carts.bulkCreate(cartEntries).then((r) => [r]);
           }
         })
         .then((success) => {
@@ -89,7 +89,7 @@ module.exports = {
     try {
       db.orders.findAll({
         order: [["createdAt", "DESC"]],
-        include: [{ model: db.addresses }, { model: db.Cart }],
+        include: [{ model: db.addresses }, { model: db.carts }],
       })
         .then((list) => {
           res.status(200).json({ success: true, order: list });
@@ -133,7 +133,7 @@ module.exports = {
       db.orders.findAll({
         where: { custId: req.body.id },
         order: [["createdAt", "DESC"]],
-        include: [{ model: db.addresses, include: [{ model: db.Cart }] }],
+        include: [{ model: db.addresses, include: [{ model: db.carts }] }],
       })
         .then((list) => {
           res.status(200).json({ success: true, order: list });
@@ -150,7 +150,7 @@ module.exports = {
       db.orders.findAll({
         where: { status: req.body.status },
         order: [["createdAt", "DESC"]],
-        include: [{ model: db.addresses, include: [{ model: db.Cart }] }],
+        include: [{ model: db.addresses, include: [{ model: db.carts }] }],
       })
         .then((list) => {
           res.status(200).json({ success: true, order: list });

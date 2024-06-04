@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Cart = sequelize.define('Cart', {
+  const Cart = sequelize.define('carts', {
     productId: DataTypes.INTEGER,
     name: DataTypes.STRING,
     orderId: DataTypes.INTEGER,
@@ -12,8 +12,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Cart.associate = function(models) {
     // associations can be defined here
-    models.Cart.belongsTo(models.addresses, { foreignKey: 'addressId' });  
-    models.Cart.belongsTo(models.orders, { foreignKey: 'orderId' });
+    models.carts.belongsTo(models.addresses, { foreignKey: 'addressId' });  
+    models.carts.belongsTo(models.orders, { foreignKey: 'orderId' });
   };
   return Cart;
 }; 
