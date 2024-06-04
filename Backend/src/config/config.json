@@ -1,25 +1,25 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "supermarket",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
+    "username": "u490757224_lionsuser",
+    "password": "7wVSf&F$",
+    "database": "u490757224_lionsclubhosur",
+    "host": "nicknameinfotech.com",
+    "dialect": "mysql", 
     "operatorsAliases": false
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "supermarket",
-    "host": "127.0.0.1",
+    "username": "u490757224_lionsuser",
+    "password": "7wVSf&F$",
+    "database": "u490757224_lionsclubhosur",
+    "host": "nicknameinfotech.com",
     "dialect": "mysql",
     "operatorsAliases": false
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "supermarket",
-    "host": "127.0.0.1",
+    "username": "u490757224_lionsuser",
+    "password": "7wVSf&F$",
+    "database": "u490757224_lionsclubhosur",
+    "host": "nicknameinfotech.com",
     "dialect": "mysql",
     "operatorsAliases": false
   }

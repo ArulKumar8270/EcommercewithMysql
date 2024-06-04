@@ -1,5 +1,5 @@
 module.exports = {
-
+ 
     /**
      * Here you may specify which of the database connections below you wish
      * to use as your default connection for all database work. 
@@ -11,7 +11,7 @@ module.exports = {
      * Here you may specify the host address of database which will be
      * used for connection
      */
-    host  : process.env.DB_HOST || "127.0.0.1",
+    host  : process.env.DB_HOST || "nicknameinfotech.com",
 
     
     /**
@@ -25,19 +25,19 @@ module.exports = {
      * Here you may specify the database name of connection which will be
      * used for connection
      */
-    database  : process.env.DB_DATABASE || "supermarket",
+    database  : process.env.DB_DATABASE || "u490757224_lionsclubhosur",
 
     
     /**
      * Here you may specify the username of database which will be
      * used for connection
      */
-    username : process.env.DB_USERNAME || "root",
+    username : process.env.DB_USERNAME || "u490757224_lionsuser",
 
     
     /**
      * Here you may specify the password of database which will be
      * used for connection
      */
-    password : process.env.DB_PASSWORD || "",
+    password : process.env.DB_PASSWORD || "7wVSf&F$",
 }
