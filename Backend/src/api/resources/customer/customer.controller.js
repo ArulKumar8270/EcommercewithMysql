@@ -87,7 +87,7 @@ module.exports = {
       .findOne({
         where: { email: req.query.email },
         paranoid: false,
-        include: [{ model: db.Address }],
+        include: [{ model: db.addresses }],
       })
       .then((user) => {
         if (user) {

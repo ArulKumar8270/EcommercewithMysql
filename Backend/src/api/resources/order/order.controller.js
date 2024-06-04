@@ -16,7 +16,7 @@ module.exports = {
         .findOne({ where: { id: customerId } })
         .then((p) => {
           if (p) {
-            return db.Order.create({
+            return db.orders.create({
               custId: customerId,
               number: orderId,
               grandtotal: grandTotal,
@@ -27,7 +27,7 @@ module.exports = {
         })
         .then((order) => {
           if (order) {
-            return db.Address.create({
+            return db.addresses.create({
               orderId: order.id,
               custId: customerId,
               fullname: deliveryAddress ? deliveryAddress.name : "",
@@ -87,9 +87,9 @@ module.exports = {
       }
     }
     try {
-      db.Order.findAll({
+      db.orders.findAll({
         order: [["createdAt", "DESC"]],
-        include: [{ model: db.Address }, { model: db.Cart }],
+        include: [{ model: db.addresses }, { model: db.Cart }],
       })
         .then((list) => {
           res.status(200).json({ success: true, order: list });
@@ -105,9 +105,9 @@ module.exports = {
   async statusUpdate(req, res, next) {
     try {
       const { id, status, deliverydate } = req.body;
-      db.Order.findOne({ where: { id: id } })
+      db.orders.findOne({ where: { id: id } })
         .then((list) => {
-          return db.Order.update(
+          return db.orders.update(
             {
               status: status,
               deliverydate: deliverydate ? deliverydate : list.deliverydate,
@@ -130,10 +130,10 @@ module.exports = {
 
   async getAllOrderListById(req, res, next) {
     try {
-      db.Order.findAll({
+      db.orders.findAll({
         where: { custId: req.body.id },
         order: [["createdAt", "DESC"]],
-        include: [{ model: db.Address, include: [{ model: db.Cart }] }],
+        include: [{ model: db.addresses, include: [{ model: db.Cart }] }],
       })
         .then((list) => {
           res.status(200).json({ success: true, order: list });
@@ -147,10 +147,10 @@ module.exports = {
   },
   async getAllOrderStatus(req, res, next) {
     try {
-      db.Order.findAll({
+      db.orders.findAll({
         where: { status: req.body.status },
         order: [["createdAt", "DESC"]],
-        include: [{ model: db.Address, include: [{ model: db.Cart }] }],
+        include: [{ model: db.addresses, include: [{ model: db.Cart }] }],
       })
         .then((list) => {
           res.status(200).json({ success: true, order: list });
@@ -164,7 +164,7 @@ module.exports = {
   },
   async getAllOrderCount(req, res, next) {
     try {
-      db.Order.findAll({
+      db.orders.findAll({
         attributes: [
           "status",
           [Sequelize.fn("COUNT", Sequelize.col("status")), "total"],
