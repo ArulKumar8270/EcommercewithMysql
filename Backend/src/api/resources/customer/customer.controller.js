@@ -42,7 +42,7 @@ function verifyOtp(token) {
 module.exports = {
   async addUser(req, res, next) {
     const { firstName, lastName, phone, email, address, password } = req.body;
-    console.log(req.body, "sajdflaks", email)
+    console.log(req.body, "sajdflaks", email);
     var passwordHash = bcrypt.hashSync(password);
     var token = generateOtp();
     var otp = verifyOtp(token);
@@ -61,21 +61,19 @@ module.exports = {
           password: passwordHash,
         });
       })
-      // .then((user) => {
-      //   if (user) {
-      //     mailer.sendEmployeePassword(email, token);
-      //     return res
-      //       .status(200)
-      //       .json({
-      //         success: true,
-      //         key: otp,
-      //         msg:
-      //           "New Registration added and password has been sent to " +
-      //           email +
-      //           " .",
-      //       });
-      //   } else res.status(500).json({ success: false });
-      // })
+      .then((user) => {
+        if (user) {
+          // mailer.sendEmployeePassword(email, token);
+          return res.status(200).json({
+            success: true,
+            key: otp,
+            msg:
+              "New Registration added and password has been sent to " +
+              email +
+              " .",
+          });
+        } else res.status(500).json({ success: false });
+      })
       .catch((err) => {
         console.log(err);
         next(err);
