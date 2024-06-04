@@ -139,7 +139,7 @@ module.exports = {
           order: [["createdAt", "DESC"]],
           include: [
             {
-              model: db.SubCategory,
+              model: db.subcategories,
               attributes: ["id", "sub_name"],
               include: [{ model: db.category, attributes: ["id", "name"] }],
             },
@@ -349,7 +349,7 @@ module.exports = {
 
   async searchProductBySubCat(req, res, next) {
     try {
-      db.SubCategory.findOne({
+      db.subcategories.findOne({
         where: { sub_name: req.body.subCat },
       })
         .then((data) => {
@@ -535,7 +535,7 @@ module.exports = {
       if (req.query.search) {
         search = "%" + req.query.search + "%";
       }
-      db.SubCategory.findAll({
+      db.subcategories.findAll({
         attributes: ["id", "sub_name"],
         include: [
           {
@@ -564,11 +564,11 @@ module.exports = {
 
   async GetAllByCategory(req, res, next) {
     try {
-      db.SubCategory.findOne({
+      db.subcategories.findOne({
         where: { sub_name: req.body.name },
         include: [
           {
-            model: db.SubChildCategory,
+            model: db.subchildcategories,
             include: [
               {
                 model: db.product,

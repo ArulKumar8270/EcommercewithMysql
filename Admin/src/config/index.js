@@ -1,7 +1,7 @@
 const API_URL =
     document.domain === 'localhost'
-    ? "http://localhost:4000"
-    : "production";
+    ? "http://localhost:5000"
+    : "https://lionsclubhosurmagnum.com/backend";
 
 const Apis = {
   //Authentication api
