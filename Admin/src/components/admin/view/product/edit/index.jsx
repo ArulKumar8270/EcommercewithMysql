@@ -77,8 +77,8 @@ export default class Edit extends Component {
         // formData.append('subCategoryId', selectedSubCategory);
         // formData.append('childCategoryId', selectedChildCategory);
         formData.append('name', name);
-        formData.append('slug', slug);
-        formData.append('brand', brand);
+        formData.append('slug', 1);
+        formData.append('brand', 1);
         formData.append('status', status);
         formData.append('unitSize', unit);
         formData.append('desc', content);
@@ -184,7 +184,7 @@ export default class Edit extends Component {
                                                 <ChildCategorylist state={getsublist} onSelectchildCategory={this.handleChildCategory} />
                                             </div>
                                         </div> */}
-                                        <div className="col-lg-2 col-md-2">
+                                        {/* <div className="col-lg-2 col-md-2">
                                             <div className="form-group">
                                                 <label className="form-label">Slug*</label>
                                                 <input type="text" className="form-control" placeholder="Enter Slug" name="slug" value={this.state.slug} onChange={(e) => this.handleChange(e)} />
@@ -194,15 +194,15 @@ export default class Edit extends Component {
                                             <div className="form-group">
                                                 <label className="form-label">Brand*</label>
                                                 <input type="text" className="form-control" placeholder="Brand Name" name="brand" value={this.state.brand} onChange={(e) => this.handleChange(e)} />
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-2 col-md-2">
+                                            </div> */}
+                                        {/* </div> */}
+                                        <div className="col-lg-4 col-md-4">
                                             <div className="form-group">
-                                                <label className="form-label">Unit Size*</label>
+                                                <label className="form-label">Size*</label>
                                                 <input type="text" className="form-control" placeholder="size" name="unit" value={this.state.unit} onChange={(e) => this.handleChange(e)} />
                                             </div>
                                         </div>
-                                        <div className="col-lg-2 col-md-2">
+                                        <div className="col-lg-4 col-md-4">
                                             <div className="form-group">
                                                 <label className="form-label">Category Image*</label>
                                                 <input type="file" className="form-control" name="image" onChange={this.onFileChange} />
@@ -211,7 +211,7 @@ export default class Edit extends Component {
 
                                     </div>
                                     <div className="row" style={{ paddingTop: '2rem' }}>
-                                        <div className="col-lg-2 col-md-2">
+                                        <div className="col-lg-3 col-md-3">
                                             <div className="form-group">
                                                 <label className="form-label">Status*</label>
                                                 <select id="status" name="status" className="form-control" value={this.state.status} onChange={(e) => this.handleChange(e)}>
@@ -220,43 +220,43 @@ export default class Edit extends Component {
                                                 </select>
                                             </div>
                                         </div>
-                                        <div className="col-lg-2 col-md-2">
+                                        {/* <div className="col-lg-2 col-md-2">
                                             <div className="form-group">
                                                 <label className="form-label">Buyer Price*</label>
                                                 <input type="number" className="form-control" name="buyerPrice" value={this.state.buyerPrice} onChange={(e) => this.handleChange(e)} />
                                             </div>
-                                        </div>
-                                        <div className="col-lg-2 col-md-2">
+                                        </div> */}
+                                        <div className="col-lg-3 col-md-3">
                                             <div className="form-group">
-                                                <label className="form-label">Seller Price*</label>
+                                                <label className="form-label">Price*</label>
                                                 <input type="number" className="form-control" name="price" value={this.state.price} onChange={(e) => this.handleChange(e)} />
                                             </div>
                                         </div>
-                                        <div className="col-lg-2 col-md-2">
+                                        <div className="col-lg-3 col-md-3">
                                             <div className="form-group">
                                                 <label className="form-label">Quantity*</label>
                                                 <input type="number" className="form-control" name="qty" value={this.state.qty} onChange={(e) => this.handleChange(e)} />
                                             </div>
                                         </div>
-                                        <div className="col-lg-1 col-md-1">
+                                        {/* <div className="col-lg-1 col-md-1">
                                             <div className="form-group">
                                                 <label className="form-label">Discount(%)*</label>
                                                 <input type="number" className="form-control" name="discountPer" value={this.state.discountPer} onChange={(e) => this.handleChange(e)} />
                                             </div>
-                                        </div>
-                                        <div className="col-lg-1 col-md-1">
+                                        </div> */}
+                                        {/* <div className="col-lg-1 col-md-1">
                                             <div className="form-group">
                                                 <label className="form-label">Discount Price*</label>
                                                 <input type="number" className="form-control" disabled name="discount" value={this.state.discount} onChange={(e) => this.handleChange(e)} />
                                             </div>
-                                        </div>
-                                        <div className="col-lg-1 col-md-1">
+                                        </div> */}
+                                        {/* <div className="col-lg-1 col-md-1">
                                             <div className="form-group">
                                                 <label className="form-label">Total *</label>
                                                 <input type="number" className="form-control" disabled name="total" value={this.state.total} onChange={(e) => this.handleChange(e)} />
                                             </div>
-                                        </div>
-                                        <div className="col-lg-1 col-md-1">
+                                        </div> */}
+                                        <div className="col-lg-3 col-md-3">
                                             <div className="form-group">
                                                 <label className="form-label">Grand Total *</label>
                                                 <input type="number" className="form-control" disabled name="grand_total" value={this.state.grand_total} onChange={(e) => this.handleChange(e)} />

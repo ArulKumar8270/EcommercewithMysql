@@ -1,7 +1,7 @@
 const JWT = require("jsonwebtoken");
 const mailer = require("../../../mailer");
 const config = require("../../../config");
-const bcrypt = require("bcrypt-nodejs");
+const bcrypt = require("bcrypt-nodejs"); 
 const speakeasy = require("speakeasy");
 const { validateEmail } = require("./../../../functions");
 const db = require("../../../models");

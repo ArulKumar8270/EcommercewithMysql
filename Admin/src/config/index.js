@@ -8,7 +8,7 @@ const Apis = {
   GetUserLogin: `${API_URL}/api/auth/rootLogin`,
   GetUserRegsiter: `${API_URL}/api/auth/register`,
   GetAllUserList: `${API_URL}/api/auth/user/getAllUserList`,
-  GetUserUpdate: `${API_URL}/api/auth/user/update`,
+  GetUserUpdate: `${API_URL}/api/auth/user/update`, 
   GetDeleteUserList: `${API_URL}/api/auth/user/delete`,
 
 

@@ -15,7 +15,7 @@ export default class Sidebar extends Component {
                                 Dashboard
                             </a>
 
-                            <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseShops" aria-expanded="false" aria-controls="collapseShops">
+                            {/* <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseShops" aria-expanded="false" aria-controls="collapseShops">
                                 <div className="sb-nav-link-icon"><i className="fas fa-store" /></div>
                                 Vendors
                             <div className="sb-sidenav-collapse-arrow"><i className="fas fa-angle-down" /></div>
@@ -26,7 +26,7 @@ export default class Sidebar extends Component {
                                     <a className="nav-link sub_nav_link" href="/admin/shop/create">create</a>
                                     <a className="nav-link sub_nav_link" href="/admin/vendor/product/list">Product</a>
                                 </nav>
-                            </div>
+                            </div> */}
                             <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProducts" aria-expanded="false" aria-controls="collapseProducts">
                                 <div className="sb-nav-link-icon"><i className="fas fa-box" /></div>
                                 Products
@@ -36,10 +36,10 @@ export default class Sidebar extends Component {
                                 <nav className="sb-sidenav-menu-nested nav">
                                     <a className="nav-link sub_nav_link" href="/admin/product/list">All Products</a>
                                     <a className="nav-link sub_nav_link" href="/admin/product/create">Add Product</a>
-                                    <a className="nav-link sub_nav_link" href="/admin/product/more-photo">Add More Image</a>
+                                    {/* <a className="nav-link sub_nav_link" href="/admin/product/more-photo">Add More Image</a> */}
                                 </nav>
                             </div>
-                            <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCategories" aria-expanded="false" aria-controls="collapseCategories">
+                            {/* <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCategories" aria-expanded="false" aria-controls="collapseCategories">
                                 <div className="sb-nav-link-icon"><i className="fas fa-list" /></div>
                                 Categories
                                 <div className="sb-sidenav-collapse-arrow"><i className="fas fa-angle-down" /></div>
@@ -52,8 +52,8 @@ export default class Sidebar extends Component {
                                     <a className="nav-link sub_nav_link" href="/admin/category/sub-child-create">Add Child-Category</a>
 
                                 </nav>
-                            </div>
-                            <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLocations" aria-expanded="false" aria-controls="collapseLocations">
+                            </div> */}
+                            {/* <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLocations" aria-expanded="false" aria-controls="collapseLocations">
                                 <div className="sb-nav-link-icon"><i className="fas fa-map-marker-alt" /></div>
                                 Locations
                                 <div className="sb-sidenav-collapse-arrow"><i className="fas fa-angle-down" /></div>
@@ -74,7 +74,7 @@ export default class Sidebar extends Component {
                                     <a className="nav-link sub_nav_link" href="/admin/area/list">All Areas</a>
                                     <a className="nav-link sub_nav_link" href="/admin/area/create">Add Area</a>
                                 </nav>
-                            </div>
+                            </div> */}
                              <a className={role === "admin"?"nav-link":"d-none"} href="/admin/user/list">
                                 <div className="sb-nav-link-icon"><i className="fas fa-users" /></div>
                                 Roles Management
@@ -83,10 +83,10 @@ export default class Sidebar extends Component {
                                 <div className="sb-nav-link-icon"><i className="fas fa-users" /></div>
                                 Customers
                             </a>
-                            <a className="nav-link" href="/admin/payment/list">
+                            {/* <a className="nav-link" href="/admin/payment/list">
                                 <div className="sb-nav-link-icon"><i className="fas fa-users" /></div>
                                 Payment
-                            </a>
+                            </a> */}
                             {/* <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div className="sb-nav-link-icon"><i className="fas fa-newspaper" /></div>
                                 Posts
