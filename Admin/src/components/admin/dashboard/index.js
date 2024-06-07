@@ -183,8 +183,6 @@ export default class Home extends Component {
                                                 <thead>
                                                     <tr>
                                                         <th style={{ width: 50 }}>ID</th>
-                                                        <th style={{ width: 130 }}>Order ID</th>
-                                                        <th style={{ width: 130 }}>Payment Method</th>
                                                         <th style={{ width: 200 }}>Order Date</th>
                                                         <th style={{ width: 200 }}>Delivery Date</th>
                                                         <th style={{ width: 130 }}>Status</th>
@@ -198,8 +196,6 @@ export default class Home extends Component {
                                                             getList.map((row, index) => (
                                                                 <tr key={index}>
                                                                     <td>{row.id}</td>
-                                                                    <td>{row.number}</td>
-                                                                    <td>{row.paymentmethod} </td>
                                                                     <td>
                                                                         <span className="delivery-time"><Moment format='MMMM Do YYYY'>{row.createdAt}</Moment></span>
                                                                         <span className="delivery-time"><Moment format=' h:mm:ss a'>{row.createdAt}</Moment></span>

@@ -62,7 +62,7 @@ module.exports = {
         Key: originalname,
         Body: buffer,
       };
-      
+
       const uploadCommand = new PutObjectCommand(uploadParams);
       const result = await s3Client.send(uploadCommand);
       const url = `https://${BUCKET_NAME}.s3.ap-south-1.amazonaws.com/${originalname}`;
@@ -349,9 +349,10 @@ module.exports = {
 
   async searchProductBySubCat(req, res, next) {
     try {
-      db.subcategories.findOne({
-        where: { sub_name: req.body.subCat },
-      })
+      db.subcategories
+        .findOne({
+          where: { sub_name: req.body.subCat },
+        })
         .then((data) => {
           if (data) {
             return db.product.findAll({
@@ -535,21 +536,22 @@ module.exports = {
       if (req.query.search) {
         search = "%" + req.query.search + "%";
       }
-      db.subcategories.findAll({
-        attributes: ["id", "sub_name"],
-        include: [
-          {
-            model: db.product,
-            order: [["createdAt", "DESC"]],
-            required: true,
-            where: {
-              [Op.or]: [
-                { name: { [Op.like]: search }, slug: { [Op.like]: search } },
-              ],
+      db.subcategories
+        .findAll({
+          attributes: ["id", "sub_name"],
+          include: [
+            {
+              model: db.product,
+              order: [["createdAt", "DESC"]],
+              required: true,
+              where: {
+                [Op.or]: [
+                  { name: { [Op.like]: search }, slug: { [Op.like]: search } },
+                ],
+              },
             },
-          },
-        ],
-      })
+          ],
+        })
 
         .then((product) => {
           res.status(200).json({ success: true, data: product });
@@ -564,23 +566,24 @@ module.exports = {
 
   async GetAllByCategory(req, res, next) {
     try {
-      db.subcategories.findOne({
-        where: { sub_name: req.body.name },
-        include: [
-          {
-            model: db.subchildcategories,
-            include: [
-              {
-                model: db.product,
-                order: [["createdAt", "DESC"]],
-                include: [
-                  { model: db.productphoto, attributes: ["id", "imgUrl"] },
-                ],
-              },
-            ],
-          },
-        ],
-      })
+      db.subcategories
+        .findOne({
+          where: { sub_name: req.body.name },
+          include: [
+            {
+              model: db.subchildcategories,
+              include: [
+                {
+                  model: db.product,
+                  order: [["createdAt", "DESC"]],
+                  include: [
+                    { model: db.productphoto, attributes: ["id", "imgUrl"] },
+                  ],
+                },
+              ],
+            },
+          ],
+        })
         .then((product) => {
           res.status(200).json({ success: true, data: product });
         })
