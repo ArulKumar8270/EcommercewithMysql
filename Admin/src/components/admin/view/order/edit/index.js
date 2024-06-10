@@ -213,8 +213,8 @@ export default class Edit extends Component {
                               >
                                 <option value="processing">Processing</option>
                                 <option value="shipping">Shipping</option>
-                                <option value="delieverd">Delivered</option>
-                                <option value="cancel">Cancel</option>
+                                <option value="delivered">Delivered</option>
+                                <option value="cancelled">Cancel</option>
                               </select>
                               <div className="input-group-append">
                                 <button

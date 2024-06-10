@@ -39,7 +39,7 @@ export default class Sidebar extends Component {
                                     {/* <a className="nav-link sub_nav_link" href="/admin/product/more-photo">Add More Image</a> */}
                                 </nav>
                             </div>
-                            {/* <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCategories" aria-expanded="false" aria-controls="collapseCategories">
+                            <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCategories" aria-expanded="false" aria-controls="collapseCategories">
                                 <div className="sb-nav-link-icon"><i className="fas fa-list" /></div>
                                 Categories
                                 <div className="sb-sidenav-collapse-arrow"><i className="fas fa-angle-down" /></div>
@@ -48,11 +48,11 @@ export default class Sidebar extends Component {
                                 <nav className="sb-sidenav-menu-nested nav">
                                     <a className="nav-link sub_nav_link" href="/admin/category/list">All Categories</a>
                                     <a className="nav-link sub_nav_link" href="/admin/category/create">Add Category</a>
-                                    <a className="nav-link sub_nav_link" href="/admin/category/sub-create">Add Sub-Category</a>
-                                    <a className="nav-link sub_nav_link" href="/admin/category/sub-child-create">Add Child-Category</a>
+                                    {/* <a className="nav-link sub_nav_link" href="/admin/category/sub-create">Add Sub-Category</a>
+                                    <a className="nav-link sub_nav_link" href="/admin/category/sub-child-create">Add Child-Category</a> */}
 
                                 </nav>
-                            </div> */}
+                            </div>
                             {/* <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLocations" aria-expanded="false" aria-controls="collapseLocations">
                                 <div className="sb-nav-link-icon"><i className="fas fa-map-marker-alt" /></div>
                                 Locations

@@ -115,7 +115,7 @@ export default class Newproduct extends Component {
       grand_total,
     } = this.state;
     const formData = new FormData();
-    formData.append("categoryId", 1);
+    formData.append("categoryId", selectedCategory);
     formData.append("subCategoryId", 1);
     formData.append("childCategoryId", 1);
     formData.append("name", name);
@@ -180,32 +180,35 @@ export default class Newproduct extends Component {
           <li className="breadcrumb-item active">Add Product</li>
         </ol>
 
-        {/* <div className="row">
-                    <div className="col-lg-6 col-md-6">
-                        <div className="card card-static-2 mb-30">
-                            <div className="card-body-table">
-                                <div className="news-content-right pd-20">
-                                    <div className="form-group">
-                                        <label className="form-label">Category*</label>
-                                        <MainCategorylist onSelectCategory={this.handleCategory} />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-6 col-md-6">
-                        <div className="card card-static-2 mb-30">
-                            <div className="card-body-table">
-                                <div className="news-content-right pd-20">
-                                    <div className="form-group">
-                                        <label className="form-label">Sub Category*</label>
-                                        <SubCategorylist state={getList} onSelectSubCategory={this.handleSubCategory} />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
+        <div className="row">
+          <div className="col-lg-6 col-md-6">
+            <div className="card card-static-2 mb-30">
+              <div className="card-body-table">
+                <div className="news-content-right pd-20">
+                  <div className="form-group">
+                    <label className="form-label">Category*</label>
+                    <MainCategorylist onSelectCategory={this.handleCategory} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* <div className="col-lg-6 col-md-6">
+            <div className="card card-static-2 mb-30">
+              <div className="card-body-table">
+                <div className="news-content-right pd-20">
+                  <div className="form-group">
+                    <label className="form-label">Sub Category*</label>
+                    <SubCategorylist
+                      state={getList}
+                      onSelectSubCategory={this.handleSubCategory}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> */}
+        </div>
 
         <div className="row">
           {isLoaded ? <Loader /> : ""}
